@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+</head>
+<body>
+
+<h1>Strona logowania</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Potwierdzam</button>
+
+</form>
+
+<style>
+    body {
+    background-color:   darkseagreen;
+    color:  antiquewhite;
+    text-align: center
+    }
+
+    </style>
+
+
+<p>Nie masz konta? <a href="{% url 'Rejestracja' %}">Zarejestruj sie</a></p>
+
+<img src="https://png.pngtree.com/png-vector/20241116/ourmid/pngtree-bmw-luxury-car-front-illustration-png-image_14441379.png">
+
+</body>
+</html>

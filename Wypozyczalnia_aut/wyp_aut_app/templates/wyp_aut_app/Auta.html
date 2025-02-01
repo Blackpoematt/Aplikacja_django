@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auta</title>
+</head>
+<body>
+
+<p>Zalogowany użytkownik: {{user.username}}</p>
+
+<p><form method="POST" action="{% url 'logout' %}">
+  {% csrf_token %}
+  <button type="submit">Wyloguj się</button>
+</form>
+</p>
+
+<a href="{% url 'Rezerwacje' %}">Moje rezerwacje</a>
+
+<h1>Zarezerwuj auto</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Rezerwuje</button>
+
+</form>
+
+<style>
+    body {
+    background-color:   darkseagreen;
+    color:  antiquewhite;
+    text-align: center
+    }
+
+    </style>
+
+<p>{{error_message}}</p>
+
+
+</body>
+</html>

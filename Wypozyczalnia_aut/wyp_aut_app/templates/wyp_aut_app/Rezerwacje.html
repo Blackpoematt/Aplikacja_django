@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezerwacje</title>
+</head>
+<body>
+
+<p>Zalogowany użytkownik: {{user.username}}</p>
+
+<p><form method="POST" action="{% url 'logout' %}">
+  {% csrf_token %}
+  <button type="submit">Wyloguj się</button>
+</form>
+</p>
+
+<a href="{% url 'Auta' %}">Auta</a>
+
+<h1>Twoje aktualne rezerwacje</h1>
+
+{% for rent in user.rents.all %}
+<p><b>{{rent.auta}}</p></b>
+<p>Start wynajmu: {{rent.date_start|date:"d.m.Y"}} Koniec wynajmu: {{rent.date_end|date:"d.m.Y"}}</p>
+{% endfor %}
+
+
+
+<style>
+    body {
+    background-color:   darkseagreen;
+    color:  antiquewhite;
+    text-align: center
+    }
+    </style>
+
+
+
+</body>
+</html>

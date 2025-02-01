@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+</head>
+
+<body>
+
+<h1>Strona rejestracji</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Zakładam konto!</button>
+
+</form>
+
+<style>
+    body {
+    background-color:   darkseagreen;
+    color:  antiquewhite;
+    text-align: center
+    }
+    </style>
+
+<p>Posiadasz konto? <a href="{% url 'logowanie' %}">Zaloguj się</a>
+</p>
+
+<img src="">
+
+</body>
+</html>
